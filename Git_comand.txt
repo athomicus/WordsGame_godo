@@ -1,0 +1,18 @@
+git init -b main
+
+$ git remote add origin <REMOTE_URL>
+# Sets the new remote
+$ git remote -v
+# Verifies the new remote URL
+
+<REMOTE_URL> - z zalozonego repo w github.com  
+
+
+
+git pull MyOrigin master | zalezy jak sie zalozy mozna tez: git pull origin master bo $ git remote add origin
+
+git add .
+git commit -m "info"
+git push MyOrigin master
+
+GitBash
