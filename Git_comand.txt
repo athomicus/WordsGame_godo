@@ -16,3 +16,12 @@ git commit -m "info"
 git push MyOrigin master    | git push origin main
 
 GitBash
+
+
+
+jak cos sie zwali:
+
+
+git pull --rebase
+git push -f origin main 		 
+ 
