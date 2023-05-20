@@ -13,6 +13,6 @@ git pull MyOrigin master | zalezy jak sie zalozy mozna tez: git pull origin mast
 
 git add .
 git commit -m "info"
-git push MyOrigin master
+git push MyOrigin master    | git push origin main
 
 GitBash
