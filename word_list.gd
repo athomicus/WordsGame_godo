@@ -1,38 +1,56 @@
 extends Node2D
+var allWords = []
 var longWords = []
-var path="res://2of12inf.txt"
-
+var file_path="res://2of12inf.txt"
+var which_word
+var lenght_of_longWords
 
  
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	load_file(path) 
+	load_file_prepare_data(file_path) 
+	
+	lenght_of_longWords = longWords.size() - 1
+	
+	#randi()%10+1 # 1-10
+	
+	#$RandomWordLabel.text = "abc"
+	
+	#longWords[which_word]
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
 	pass
 
-func load_file(path):
+func load_file_prepare_data(path):
 	var line 
 	var file = FileAccess.open(path,FileAccess.READ)
 	while !file.eof_reached():
 		line = file.get_line()
-		longWords.append(line)
-		
-		
-	
-	print( longWords[longWords.size()-2] )
-	var ostatniwyraz =  longWords[longWords.size()-1]
-	print(ostatniwyraz, " ma znakow:" , ostatniwyraz.length()) 
-	var a = longWords.find("bibulka") # -1 
-	print(a)
-	
-	a = longWords.find("SEx".to_upper())  
-	print(a)
-	
+		allWords.append(line)
+		if line.length() > 6:
+			longWords.append(line) #z dlugich slow zrobimy levele	
 	file = null # File is closed.
+	
+		
+	print("longWords:",longWords.size())
+	print("allWords:",allWords.size())
+	#print(allWords[0].length())
 	return
+	
+	
+	#print( allWords[allWords.size()-2] )
+	#var ostatniwyraz =  allWords[allWords.size()-1]
+	#print(ostatniwyraz, " ma znakow:" , ostatniwyraz.length()) 
+	#var a = allWords.find("bibulka") # -1 
+	#print(a)
+	
+	#a = allWords.find("SEx".to_upper())  
+	#print(a)
+	
+	
+
 	
 	#file.store_var(content)
 	#var content = file.get_var()
