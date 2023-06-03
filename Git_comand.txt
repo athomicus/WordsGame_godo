@@ -9,6 +9,8 @@ $ git remote -v
 
 
 
+git clone <repo adress from github>
+
 git pull MyOrigin master | zalezy jak sie zalozy mozna tez: git pull origin master bo $ git remote add origin
 
 git add .
