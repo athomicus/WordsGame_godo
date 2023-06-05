@@ -1,6 +1,6 @@
 extends Node2D
-var allWords = []
-var longWords = []
+var allWords = [] #wszystki slowa zaczytane z pliku
+var longWords = [] # dluzsze slowa z ktorych robimy levele
 var file_path="res://2of12inf.txt"
 var which_word
 var lenght_of_longWords
@@ -11,11 +11,10 @@ func _ready():
 	load_file_prepare_data(file_path) 
 	
 	lenght_of_longWords = longWords.size() - 1
+	print("Plik wczytany")
 	
 	#randi()%10+1 # 1-10
-	
 	#$RandomWordLabel.text = "abc"
-	
 	#longWords[which_word]
 
 
@@ -28,9 +27,12 @@ func load_file_prepare_data(path):
 	var file = FileAccess.open(path,FileAccess.READ)
 	while !file.eof_reached():
 		line = file.get_line()
-		allWords.append(line)
-		if line.length() > 6:
+		
+		if line.length() > 5 && line.length() <7:
 			longWords.append(line) #z dlugich slow zrobimy levele	
+	
+		allWords.append(line) 
+			
 	file = null # File is closed.
 	
 		
