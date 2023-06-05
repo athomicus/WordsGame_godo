@@ -19,11 +19,17 @@ git push MyOrigin master    | git push origin main
 
 GitBash
 
+$ git branch
+$ git checkout <existing_branch>
+$ git checkout -b <new_branch>
+
+git checkout -b hotfix
+git commit -a -m 'Fix broken email address'
+$ git checkout master
+$ git merge hotfix  
 
 
 jak cos sie zwali:
-
-
 git pull --rebase
 git push -f origin main 		 
  

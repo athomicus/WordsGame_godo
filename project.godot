@@ -24,6 +24,10 @@ WordList="*res://word_list.gd"
 window/size/viewport_width=1024
 window/size/viewport_height=768
 
+[dotnet]
+
+project/assembly_name="Words"
+
 [rendering]
 
 renderer/rendering_method="gl_compatibility"
