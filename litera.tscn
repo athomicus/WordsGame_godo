@@ -1,0 +1,21 @@
+[gd_scene load_steps=2 format=3 uid="uid://b1tlx2k3nubop"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ujfbp"]
+
+[node name="Litera" type="Node2D"]
+
+[node name="LabelBackg" type="Label" parent="."]
+modulate = Color(0.458824, 0.478431, 0.560784, 1)
+offset_right = 40.0
+offset_bottom = 28.0
+theme_type_variation = &"HeaderSmall"
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_styles/normal = SubResource("StyleBoxFlat_ujfbp")
+horizontal_alignment = 1
+
+[node name="Letter" type="Label" parent="."]
+offset_right = 40.0
+offset_bottom = 31.0
+theme_type_variation = &"HeaderSmall"
+text = "A"
+horizontal_alignment = 1

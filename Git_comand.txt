@@ -25,11 +25,17 @@ $ git checkout -b <new_branch>
 
 git checkout -b hotfix
 git commit -a -m 'Fix broken email address'
+git push origin hotfix
 $ git checkout master
 $ git merge hotfix  
 
 
 jak cos sie zwali:
 git pull --rebase
-git push -f origin main 		 
+git push -f origin main 
+
+
+json file path:
+
+ "program": "C:/Godot/Godot_v4.0.3-stable_mono_win64/Godot_v4.0.3-stable_mono_win64.exe",		 
  

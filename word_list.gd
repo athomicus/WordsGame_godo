@@ -22,13 +22,16 @@ func _ready():
 func _process(delta):
 	pass
 
+func get_all_words():
+	return allWords
+
 func load_file_prepare_data(path):
 	var line 
 	var file = FileAccess.open(path,FileAccess.READ)
 	while !file.eof_reached():
 		line = file.get_line()
 		
-		if line.length() > 5 && line.length() <7:
+		if line.length() > 6 && line.length() <=7:
 			longWords.append(line) #z dlugich slow zrobimy levele	
 	
 		allWords.append(line) 

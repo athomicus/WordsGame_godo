@@ -7,32 +7,54 @@ func _ready():
 	$RandomWordLabel.text = WordList.longWords[which_word]
 	var word = WordList.longWords[which_word] # lista słow z pliku jest w global
 	print(word)
-	make_all_permutation("",strToArray(word))
+	
+	$permutation.make_all_permutation("",word)
+	$permutation.search_in_all_words_matched_permutation(WordList.allWords)
+	all_finded_words = $permutation.give_me_table_of_checked_words()
+	print(all_finded_words)
 	print("permutacje DONE!")
-	#for i in range(100):
-	#	print(":", all_combinations[i])
 	
-#musimy sprawdzic rozbita liste slow ktore mozemy utworzyc 
-	#var ab = WordList.longword.find("AKA")
-	#print("FIND:",ab)
+	# rysuj liter bloczki
+	#for element in all_finded_words:
+	#var tab = []
 	
-	# find zwraca nr elementu tablicy jak nie znajdzie to -1
-	for element in all_combinations:
-		var number = WordList.allWords.find(element)
-		if(number >= 0 ):
-			all_finded_words.append(element)
+	var literka_scn  = load("res://litera.tscn")	 
+	for i in range(all_finded_words.size()):
+		var tym:String = all_finded_words[i]
+		for j in range(tym.length()):
+			var instance = literka_scn.instantiate()
+			add_child(instance)
+			instance.position = Vector2(32*j,(35*i))
+			instance.get_node("Letter").text = str(tym[j])
 			
+			
+			
+			
+			
+			
+			
+		
+	#var Lnode =  get_node("Litery")
+	#var scene  = load("res://litera.tscn")
+	
+	#var instance = scene.instantiate()
+	#Lnode.add_child(instance)
+	#label1.position = Vector2(10,10)
+ 
+	
+			
+		
+		
+	
+	#var all_finded_words_copy = all_finded_words.duplicate()
+	#var j = 1
+	#for element in all_finded_words:
+	#	if(all_finded_words.find(element,j) >=0):
+	#		all_finded_words_copy.erase(all_finded_words[j])
+	#	j+= 1
 	
 	
-	var all_finded_words_copy = all_finded_words.duplicate()
-	print(all_finded_words_copy)
-	var j = 1
-	for element in all_finded_words:
-		if(all_finded_words.find(element,j) >=0):
-			all_finded_words_copy.erase(all_finded_words[j])
-		j+= 1
-	print(all_finded_words_copy)
-#all_combinations[3]s
+ 
 
  
 
