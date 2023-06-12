@@ -37,5 +37,8 @@ git push -f origin main
 
 json file path:
 
- "program": "C:/Godot/Godot_v4.0.3-stable_mono_win64/Godot_v4.0.3-stable_mono_win64.exe",		 
+ "program": "C:/Godot/Godot_v4.0.3-stable_mono_win64/Godot_v4.0.3-stable_mono_win64.exe",	
+
+
+git reflog” and “git cherry-pick  jak chcesz wrócić	 
  
