@@ -1,0 +1,198 @@
+[gd_scene load_steps=2 format=3 uid="uid://dg0dkrdw60wfh"]
+
+[ext_resource type="Script" path="res://ShowWords.gd" id="1_ki445"]
+
+[node name="Control" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+script = ExtResource("1_ki445")
+
+[node name="ShowWords" type="VBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 39
+
+[node name="Words_2_Group" type="HBoxContainer" parent="ShowWords"]
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_constants/separation = 50
+
+[node name="Words_2a_Group" type="HBoxContainer" parent="ShowWords"]
+visible = false
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_constants/separation = 50
+
+[node name="Words_2b_Group" type="HBoxContainer" parent="ShowWords"]
+visible = false
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_constants/separation = 50
+
+[node name="Words_2c_Group" type="HBoxContainer" parent="ShowWords"]
+visible = false
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_constants/separation = 50
+
+[node name="Words_2d_Group" type="HBoxContainer" parent="ShowWords"]
+visible = false
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_constants/separation = 50
+
+[node name="Words_2e_Group" type="HBoxContainer" parent="ShowWords"]
+visible = false
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_constants/separation = 50
+
+[node name="Words_3_Group" type="HBoxContainer" parent="ShowWords"]
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_constants/separation = 50
+
+[node name="Words_3a_Group" type="HBoxContainer" parent="ShowWords"]
+visible = false
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_constants/separation = 50
+
+[node name="Words_3b_Group" type="HBoxContainer" parent="ShowWords"]
+visible = false
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_constants/separation = 50
+
+[node name="Words_3c_Group" type="HBoxContainer" parent="ShowWords"]
+visible = false
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_constants/separation = 50
+
+[node name="Words_3d_Group" type="HBoxContainer" parent="ShowWords"]
+visible = false
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_constants/separation = 50
+
+[node name="Words_3e_Group" type="HBoxContainer" parent="ShowWords"]
+visible = false
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_constants/separation = 50
+
+[node name="Words_4_Group" type="HBoxContainer" parent="ShowWords"]
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_constants/separation = 50
+
+[node name="Words_4a_Group" type="HBoxContainer" parent="ShowWords"]
+visible = false
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_constants/separation = 50
+
+[node name="Words_4b_Group" type="HBoxContainer" parent="ShowWords"]
+visible = false
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_constants/separation = 50
+
+[node name="Words_4c_Group" type="HBoxContainer" parent="ShowWords"]
+visible = false
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_constants/separation = 50
+
+[node name="Words_4d_Group" type="HBoxContainer" parent="ShowWords"]
+visible = false
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_constants/separation = 50
+
+[node name="Words_4e_Group" type="HBoxContainer" parent="ShowWords"]
+visible = false
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_constants/separation = 50
+
+[node name="Words_5_Group" type="HBoxContainer" parent="ShowWords"]
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_constants/separation = 50
+
+[node name="Words_5a_Group" type="HBoxContainer" parent="ShowWords"]
+visible = false
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_constants/separation = 50
+
+[node name="Words_5b_Group" type="HBoxContainer" parent="ShowWords"]
+visible = false
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_constants/separation = 50
+
+[node name="Words_5c_Group" type="HBoxContainer" parent="ShowWords"]
+visible = false
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_constants/separation = 50
+
+[node name="Words_5d_Group" type="HBoxContainer" parent="ShowWords"]
+visible = false
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_constants/separation = 50
+
+[node name="Words_5e_Group" type="HBoxContainer" parent="ShowWords"]
+visible = false
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_constants/separation = 50
+
+[node name="Words_6_Group" type="HBoxContainer" parent="ShowWords"]
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_constants/separation = 50
+
+[node name="Words_6a_Group" type="HBoxContainer" parent="ShowWords"]
+visible = false
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_constants/separation = 50
+
+[node name="Words_6b_Group" type="HBoxContainer" parent="ShowWords"]
+visible = false
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_constants/separation = 50
+
+[node name="Words_6c_Group" type="HBoxContainer" parent="ShowWords"]
+visible = false
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_constants/separation = 50
+
+[node name="Words_6d_Group" type="HBoxContainer" parent="ShowWords"]
+visible = false
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_constants/separation = 50
+
+[node name="Words_6e_Group" type="HBoxContainer" parent="ShowWords"]
+visible = false
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_constants/separation = 50
