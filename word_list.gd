@@ -1,6 +1,7 @@
 extends Node2D
 var allWords = [] #wszystki slowa zaczytane z pliku
 var longWords = [] # dluzsze slowa z ktorych robimy levele
+var file_path_pl="res://slowa.txt"
 var file_path="res://2of12inf.txt"
 var which_word
 var lenght_of_longWords
@@ -31,7 +32,7 @@ func load_file_prepare_data(path):
 	while !file.eof_reached():
 		line = file.get_line()
 		
-		if line.length() > 6 && line.length() <=7:
+		if line.length() > 5 && line.length() <=7:
 			longWords.append(line) #z dlugich slow zrobimy levele	
 	
 		allWords.append(line) 

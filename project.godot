@@ -21,12 +21,16 @@ WordList="*res://word_list.gd"
 
 [display]
 
-window/size/viewport_width=1024
-window/size/viewport_height=768
+window/size/viewport_width=1280
+window/size/viewport_height=850
 
 [dotnet]
 
 project/assembly_name="Words"
+
+[editor]
+
+run/main_run_args="--rendering-driver opengl3"
 
 [rendering]
 

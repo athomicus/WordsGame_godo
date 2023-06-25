@@ -1,31 +1,147 @@
-[gd_scene load_steps=3 format=3 uid="uid://c44vlqnkgpmrt"]
+[gd_scene load_steps=18 format=3 uid="uid://c44vlqnkgpmrt"]
 
 [ext_resource type="Script" path="res://main.gd" id="1_ka8g2"]
-[ext_resource type="PackedScene" uid="uid://dgg0ry0c0k3b2" path="res://permutation.tscn" id="2_35ccg"]
+[ext_resource type="PackedScene" uid="uid://dgg0ry0c0k3b2" path="res://tmp/permutation.tscn" id="2_35ccg"]
+[ext_resource type="Texture2D" uid="uid://bihypaj83lmbw" path="res://b.jpg" id="2_41pjv"]
+[ext_resource type="Script" path="res://Button.gd" id="2_bj73y"]
+[ext_resource type="Texture2D" uid="uid://dhrqx8qm0evsv" path="res://refresh.png" id="3_2q15k"]
+[ext_resource type="PackedScene" uid="uid://dg0dkrdw60wfh" path="res://Letter.tscn" id="3_8vnjk"]
+[ext_resource type="Texture2D" uid="uid://c763qfd1jyntr" path="res://refreshr.png" id="3_vp3hf"]
+[ext_resource type="Texture2D" uid="uid://hdtuglenx6nm" path="res://refreshr2.png" id="4_erv3u"]
+[ext_resource type="Script" path="res://reload.gd" id="6_ryq01"]
+[ext_resource type="FontFile" uid="uid://d0psiv8ro8ywi" path="res://deluxe-deluxe-400.ttf" id="9_ic5ex"]
+[ext_resource type="Texture2D" uid="uid://c2uaq82mch0if" path="res://badRed.png" id="10_h0rd0"]
+
+[sub_resource type="Animation" id="Animation_fekfn"]
+resource_name = "wrong"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3, 0.4),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 1,
+"values": [false, true, false, false, false]
+}
+
+[sub_resource type="Animation" id="Animation_q0r6j"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_2430d"]
+_data = {
+"RESET": SubResource("Animation_q0r6j"),
+"wrong": SubResource("Animation_fekfn")
+}
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_wtmsp"]
+texture = ExtResource("3_vp3hf")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_d5xmk"]
+texture = ExtResource("4_erv3u")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_5wc0c"]
+texture = ExtResource("3_2q15k")
 
 [node name="main" type="Node2D"]
 script = ExtResource("1_ka8g2")
 
-[node name="Button" type="Button" parent="."]
-offset_left = 592.0
-offset_top = 640.0
-offset_right = 625.0
-offset_bottom = 671.0
-text = "GO"
+[node name="backgrond" type="TextureRect" parent="."]
+offset_left = -17.0
+offset_right = 1293.0
+offset_bottom = 863.0
+texture = ExtResource("2_41pjv")
+stretch_mode = 1
 
-[node name="TextEdit" type="TextEdit" parent="."]
-offset_left = 365.0
-offset_top = 632.0
-offset_right = 577.0
-offset_bottom = 681.0
+[node name="RedBad" type="Control" parent="."]
+visible = false
+layout_mode = 3
+anchors_preset = 0
+offset_left = 640.0
+offset_top = 350.0
+offset_right = 680.0
+offset_bottom = 390.0
+
+[node name="TextureRect" type="TextureRect" parent="RedBad"]
+layout_mode = 0
+offset_left = -697.0
+offset_top = -367.0
+offset_right = 735.0
+offset_bottom = 510.0
+texture = ExtResource("10_h0rd0")
+
+[node name="AnimationWrong" type="AnimationPlayer" parent="RedBad"]
+libraries = {
+"": SubResource("AnimationLibrary_2430d")
+}
+
+[node name="Button" type="Button" parent="."]
+offset_left = 875.839
+offset_top = 800.795
+offset_right = 908.839
+offset_bottom = 831.795
+text = "GO"
+script = ExtResource("2_bj73y")
+
+[node name="reload" type="Button" parent="."]
+offset_left = 1245.38
+offset_top = 5.87321
+offset_right = 1278.38
+offset_bottom = 36.8732
+theme_override_styles/normal = SubResource("StyleBoxTexture_wtmsp")
+theme_override_styles/hover = SubResource("StyleBoxTexture_d5xmk")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_5wc0c")
+script = ExtResource("6_ryq01")
+
+[node name="LineEdit" type="LineEdit" parent="."]
+offset_left = 660.839
+offset_top = 800.795
+offset_right = 864.839
+offset_bottom = 831.795
+caret_blink = true
 
 [node name="RandomWordLabel" type="Label" parent="."]
-offset_left = 453.0
-offset_top = 700.0
-offset_right = 493.0
-offset_bottom = 726.0
+offset_left = 325.0
+offset_top = 792.0
+offset_right = 649.0
+offset_bottom = 838.0
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_constants/shadow_offset_x = 1
+theme_override_constants/shadow_offset_y = 1
+theme_override_constants/shadow_outline_size = 2
+theme_override_fonts/font = ExtResource("9_ic5ex")
+theme_override_font_sizes/font_size = 42
 text = "0123"
+horizontal_alignment = 2
+uppercase = true
 
 [node name="permutation" parent="." instance=ExtResource("2_35ccg")]
 
 [node name="Litery" type="Node" parent="."]
+
+[node name="Control" parent="." instance=ExtResource("3_8vnjk")]
+offset_left = 640.0
+offset_top = 350.0
+offset_right = 640.0
+offset_bottom = 350.0
+size_flags_vertical = 6
+
+[connection signal="updateUI" from="." to="Control" method="_on_main_update_ui"]
+[connection signal="pressed" from="Button" to="Button" method="_on_pressed"]
+[connection signal="send_answer" from="Button" to="Control" method="_on_button_send_answer"]
+[connection signal="pressed" from="reload" to="reload" method="_on_pressed"]
+[connection signal="text_submitted" from="LineEdit" to="Control" method="_on_line_edit_text_submitted"]

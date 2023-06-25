@@ -1,0 +1,300 @@
+[gd_scene load_steps=7 format=3 uid="uid://2yeac7spyip"]
+
+[sub_resource type="Gradient" id="Gradient_crjfa"]
+offsets = PackedFloat32Array(0, 0.608025)
+colors = PackedColorArray(0.282353, 0.470588, 0.72549, 1, 0.101961, 0.34902, 0.686275, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_a3503"]
+gradient = SubResource("Gradient_crjfa")
+width = 32
+height = 32
+fill_from = Vector2(0.58952, 1)
+fill_to = Vector2(0.489083, 0.0917031)
+
+[sub_resource type="LabelSettings" id="LabelSettings_7c2kk"]
+
+[sub_resource type="Animation" id="Animation_nm2f1"]
+resource_name = "showletter"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Label:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5, 1),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(1e-05, 1e-05), Vector2(1e-05, 1), Vector2(1, 1)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Label:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [false, true]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("TextureRect:stretch_mode")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [0, 0]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("../Letter1/TextureRect:scale")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(1, 1), Vector2(1, 1)]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("TextureRect:scale")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0, 0.5, 1),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(1, 1), Vector2(1e-05, 1), Vector2(1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_jr45h"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Label:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(1, 1)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Label:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [false]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("TextureRect:stretch_mode")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("../Letter1/TextureRect:scale")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(1, 1)]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("TextureRect:scale")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(1, 1)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_5ywhx"]
+_data = {
+"RESET": SubResource("Animation_jr45h"),
+"showletter": SubResource("Animation_nm2f1")
+}
+
+[node name="word1" type="HBoxContainer"]
+auto_translate = false
+localize_numeral_system = false
+theme_override_constants/separation = 33
+alignment = 1
+
+[node name="Letter1" type="Control" parent="."]
+layout_mode = 2
+size_flags_horizontal = 4
+
+[node name="TextureRect" type="TextureRect" parent="Letter1"]
+layout_mode = 1
+anchors_preset = -1
+anchor_bottom = 0.083
+offset_right = 32.0
+offset_bottom = 32.0
+pivot_offset = Vector2(16, 16)
+texture = SubResource("GradientTexture2D_a3503")
+
+[node name="Label" type="Label" parent="Letter1"]
+visible = false
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 1.2
+anchor_bottom = 1.2
+offset_top = 3.0
+offset_right = 33.0
+offset_bottom = 29.0
+pivot_offset = Vector2(16, 16)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 3
+theme_override_font_sizes/font_size = 6
+text = "A"
+label_settings = SubResource("LabelSettings_7c2kk")
+horizontal_alignment = 1
+vertical_alignment = 1
+uppercase = true
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Letter1"]
+libraries = {
+"": SubResource("AnimationLibrary_5ywhx")
+}
+
+[node name="Letter2" type="Control" parent="."]
+layout_mode = 2
+size_flags_horizontal = 4
+
+[node name="TextureRect" type="TextureRect" parent="Letter2"]
+layout_mode = 1
+anchors_preset = -1
+anchor_bottom = 0.083
+offset_right = 32.0
+offset_bottom = 32.0
+pivot_offset = Vector2(16, 16)
+texture = SubResource("GradientTexture2D_a3503")
+
+[node name="Label" type="Label" parent="Letter2"]
+visible = false
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 1.2
+anchor_bottom = 1.2
+offset_top = 3.0
+offset_right = 33.0
+offset_bottom = 29.0
+pivot_offset = Vector2(16, 16)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 3
+theme_override_font_sizes/font_size = 6
+text = "A"
+label_settings = SubResource("LabelSettings_7c2kk")
+horizontal_alignment = 1
+vertical_alignment = 1
+uppercase = true
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Letter2"]
+libraries = {
+"": SubResource("AnimationLibrary_5ywhx")
+}
+
+[node name="Letter3" type="Control" parent="."]
+layout_mode = 2
+size_flags_horizontal = 4
+
+[node name="TextureRect" type="TextureRect" parent="Letter3"]
+layout_mode = 1
+anchors_preset = -1
+anchor_bottom = 0.083
+offset_right = 32.0
+offset_bottom = 32.0
+pivot_offset = Vector2(16, 16)
+texture = SubResource("GradientTexture2D_a3503")
+
+[node name="Label" type="Label" parent="Letter3"]
+visible = false
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 1.2
+anchor_bottom = 1.2
+offset_top = 3.0
+offset_right = 33.0
+offset_bottom = 29.0
+pivot_offset = Vector2(16, 16)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 3
+theme_override_font_sizes/font_size = 6
+text = "A"
+label_settings = SubResource("LabelSettings_7c2kk")
+horizontal_alignment = 1
+vertical_alignment = 1
+uppercase = true
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Letter3"]
+libraries = {
+"": SubResource("AnimationLibrary_5ywhx")
+}
+
+[node name="Letter4" type="Control" parent="."]
+layout_mode = 2
+size_flags_horizontal = 4
+
+[node name="TextureRect" type="TextureRect" parent="Letter4"]
+layout_mode = 1
+anchors_preset = -1
+anchor_bottom = 0.083
+offset_right = 32.0
+offset_bottom = 32.0
+pivot_offset = Vector2(16, 16)
+texture = SubResource("GradientTexture2D_a3503")
+
+[node name="Label" type="Label" parent="Letter4"]
+visible = false
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 1.2
+anchor_bottom = 1.2
+offset_top = 3.0
+offset_right = 33.0
+offset_bottom = 29.0
+pivot_offset = Vector2(16, 16)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 3
+theme_override_font_sizes/font_size = 6
+text = "A"
+label_settings = SubResource("LabelSettings_7c2kk")
+horizontal_alignment = 1
+vertical_alignment = 1
+uppercase = true
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Letter4"]
+libraries = {
+"": SubResource("AnimationLibrary_5ywhx")
+}
