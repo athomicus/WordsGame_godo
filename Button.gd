@@ -13,6 +13,8 @@ func _ready():
 
 
 func _on_pressed():
+
+	
 	emit_signal("send_answer",$"../LineEdit".text)
 	
 	#var cs = $"../Control".get_path_array() 

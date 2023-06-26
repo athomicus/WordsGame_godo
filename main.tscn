@@ -1,31 +1,18 @@
-[gd_scene load_steps=18 format=3 uid="uid://c44vlqnkgpmrt"]
+[gd_scene load_steps=20 format=3 uid="uid://c44vlqnkgpmrt"]
 
 [ext_resource type="Script" path="res://main.gd" id="1_ka8g2"]
 [ext_resource type="PackedScene" uid="uid://dgg0ry0c0k3b2" path="res://tmp/permutation.tscn" id="2_35ccg"]
 [ext_resource type="Texture2D" uid="uid://bihypaj83lmbw" path="res://b.jpg" id="2_41pjv"]
 [ext_resource type="Script" path="res://Button.gd" id="2_bj73y"]
 [ext_resource type="Texture2D" uid="uid://dhrqx8qm0evsv" path="res://refresh.png" id="3_2q15k"]
-[ext_resource type="PackedScene" uid="uid://dg0dkrdw60wfh" path="res://Letter.tscn" id="3_8vnjk"]
+[ext_resource type="PackedScene" uid="uid://ck3fwyladofmg" path="res://Letter.tscn" id="3_8vnjk"]
 [ext_resource type="Texture2D" uid="uid://c763qfd1jyntr" path="res://refreshr.png" id="3_vp3hf"]
 [ext_resource type="Texture2D" uid="uid://hdtuglenx6nm" path="res://refreshr2.png" id="4_erv3u"]
 [ext_resource type="Script" path="res://reload.gd" id="6_ryq01"]
 [ext_resource type="FontFile" uid="uid://d0psiv8ro8ywi" path="res://deluxe-deluxe-400.ttf" id="9_ic5ex"]
 [ext_resource type="Texture2D" uid="uid://c2uaq82mch0if" path="res://badRed.png" id="10_h0rd0"]
-
-[sub_resource type="Animation" id="Animation_fekfn"]
-resource_name = "wrong"
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath(".:visible")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.1, 0.2, 0.3, 0.4),
-"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
-"update": 1,
-"values": [false, true, false, false, false]
-}
+[ext_resource type="Script" path="res://fireWorks.gd" id="12_60dfu"]
+[ext_resource type="PackedScene" uid="uid://cayqfjd8lj7tl" path="res://particleWin.tscn" id="13_hyeab"]
 
 [sub_resource type="Animation" id="Animation_q0r6j"]
 length = 0.001
@@ -40,6 +27,21 @@ tracks/0/keys = {
 "transitions": PackedFloat32Array(1),
 "update": 1,
 "values": [false]
+}
+
+[sub_resource type="Animation" id="Animation_fekfn"]
+resource_name = "wrong"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3, 0.4),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 1,
+"values": [false, true, false, false, false]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_2430d"]
@@ -139,6 +141,10 @@ offset_top = 350.0
 offset_right = 640.0
 offset_bottom = 350.0
 size_flags_vertical = 6
+
+[node name="fireWorks" type="Node2D" parent="."]
+script = ExtResource("12_60dfu")
+fireWork = ExtResource("13_hyeab")
 
 [connection signal="updateUI" from="." to="Control" method="_on_main_update_ui"]
 [connection signal="pressed" from="Button" to="Button" method="_on_pressed"]
