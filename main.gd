@@ -1,9 +1,11 @@
 extends Node2D
-#var all_combinations = [] # tablica kombinacji wylosowanego wyrazu
-var all_finded_words = [] 
+#var all_combinations = [] 
+var all_finded_words = [] # tablica kombinacji wylosowanego wyrazu
+var clone_all_finded_words = [] # tablica kombinacji wylosowanego wyrazu
 var which_word = 0
 var lit_scene_container = []
 signal updateUI(all_words)
+
 
  
 
@@ -16,7 +18,8 @@ func _ready():
 	$permutation.make_all_permutation("",word)
 	$permutation.search_in_all_words_matched_permutation(WordList.allWords)
 	all_finded_words = $permutation.give_me_table_of_checked_words()
-	print(all_finded_words)
+	clone_all_finded_words = all_finded_words.duplicate()
+	print(clone_all_finded_words)
 	print("permutacje DONE!")
 	emit_signal("updateUI",all_finded_words)
 	
@@ -156,3 +159,33 @@ func randomWords():
 
 func get_all_permutation_list_word():
 	return all_finded_words
+	
+func check_if_end_game(element):
+	var endLevel = false
+	if(all_finded_words[element] == clone_all_finded_words[element]): # sprawwdzmy czy mozemy usunac
+			clone_all_finded_words[element] = "0"
+			#clone_all_finded_words.remove_at(element)
+	print(clone_all_finded_words)
+	for word in clone_all_finded_words: #check if end of game
+		if word == "0":
+			endLevel = true
+		else:
+			endLevel = false
+			break
+			
+	if (endLevel):
+		nextLevel()
+func nextLevel():
+	#$"../fireWorks".call("run_fireworks")
+	get_node("fireWorks").call("run_fireworks")
+	await get_tree().create_timer(5).timeout
+	
+	#yield(get_tree().create_timer(1.0), "timeout")
+	get_tree().reload_current_scene()
+	pass
+	
+		
+			
+			
+			
+

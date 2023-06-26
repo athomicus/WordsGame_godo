@@ -190,7 +190,7 @@ func _on_button_send_answer(answer):
 	var allWord = $"..".get_all_permutation_list_word() #z maina allWord
 	answer = answer.to_upper()
 	var whichOne = allWord.find(answer)
-	if(whichOne>=0):
+	if(whichOne>=0): # znalazles wlasciwe slowo
 		var path = path_name_of_instances[whichOne] #zwroc sciezke node ktory zgadles
 		var arr = get_node(path).get_children() # znajdz jego dzieci
 		for element in arr:
@@ -199,6 +199,7 @@ func _on_button_send_answer(answer):
 			#element.get_node("Label").visible = true # zapal literki
 		#for letter in childrenArray[whichOne]:
 		#	letter.get_node("Label").visible = false
+		$"..".check_if_end_game(whichOne)
 	else:
 		#wrong answer
 		$"../RedBad/AnimationWrong".play("wrong")
