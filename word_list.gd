@@ -1,7 +1,7 @@
 extends Node2D
 var allWords = [] #wszystki slowa zaczytane z pliku
 var longWords = [] # dluzsze slowa z ktorych robimy levele
-var file_path_pl="res://slowa.txt"
+
 var file_path="res://2of12inf.txt"
 var which_word
 var lenght_of_longWords

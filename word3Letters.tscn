@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=3 uid="uid://1ur0sxjp4m36"]
+[gd_scene load_steps=10 format=3 uid="uid://1ur0sxjp4m36"]
 
 [sub_resource type="Gradient" id="Gradient_tyjvw"]
 offsets = PackedFloat32Array(0, 0.608025)
@@ -14,6 +14,90 @@ fill_to = Vector2(0.489083, 0.0917031)
 [sub_resource type="LabelSettings" id="LabelSettings_lrc17"]
 
 [sub_resource type="Animation" id="Animation_jr45h"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Label:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(1, 1)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Label:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [false]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("TextureRect:scale")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_nm2f1"]
+resource_name = "showletter"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Label:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5, 1),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(1e-05, 1e-05), Vector2(1e-05, 1), Vector2(1, 1)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Label:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [false, true]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("TextureRect:scale")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.5, 1),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(1, 1), Vector2(1e-05, 1), Vector2(1, 1)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_5ywhx"]
+_data = {
+"RESET": SubResource("Animation_jr45h"),
+"showletter": SubResource("Animation_nm2f1")
+}
+
+[sub_resource type="Animation" id="Animation_us5if"]
 length = 0.001
 tracks/0/type = "value"
 tracks/0/imported = false
@@ -76,7 +160,7 @@ tracks/4/keys = {
 "values": [Vector2(1, 1)]
 }
 
-[sub_resource type="Animation" id="Animation_nm2f1"]
+[sub_resource type="Animation" id="Animation_f0s61"]
 resource_name = "showletter"
 tracks/0/type = "value"
 tracks/0/imported = false
@@ -139,10 +223,10 @@ tracks/4/keys = {
 "values": [Vector2(1, 1), Vector2(1e-05, 1), Vector2(1, 1)]
 }
 
-[sub_resource type="AnimationLibrary" id="AnimationLibrary_5ywhx"]
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_y4uun"]
 _data = {
-"RESET": SubResource("Animation_jr45h"),
-"showletter": SubResource("Animation_nm2f1")
+"RESET": SubResource("Animation_us5if"),
+"showletter": SubResource("Animation_f0s61")
 }
 
 [node name="word1" type="HBoxContainer"]
@@ -222,7 +306,7 @@ uppercase = true
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="Letter2"]
 libraries = {
-"": SubResource("AnimationLibrary_5ywhx")
+"": SubResource("AnimationLibrary_y4uun")
 }
 
 [node name="Letter3" type="Control" parent="."]
@@ -259,5 +343,5 @@ uppercase = true
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="Letter3"]
 libraries = {
-"": SubResource("AnimationLibrary_5ywhx")
+"": SubResource("AnimationLibrary_y4uun")
 }

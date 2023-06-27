@@ -195,13 +195,16 @@ func _on_button_send_answer(answer):
 		var arr = get_node(path).get_children() # znajdz jego dzieci
 		for element in arr:
 			element.get_node("AnimationPlayer").play("showletter")
-			$"../LineEdit".text = ""
+			
+		$"../LineEdit".text = ""
+		$"../Word_good_2DSound".play()
 			#element.get_node("Label").visible = true # zapal literki
 		#for letter in childrenArray[whichOne]:
 		#	letter.get_node("Label").visible = false
 		$"..".check_if_end_game(whichOne)
 	else:
 		#wrong answer
+		$"../bad_word".play()
 		$"../RedBad/AnimationWrong".play("wrong")
 		$"../LineEdit".text = ""
 	print(whichOne)
