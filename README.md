@@ -1,4 +1,4 @@
-#Words<br>
+<h1>Words</h1><br>
 game <i>for own purposes</i> - build word (3,4,5- letters) from One word given<br><BR>
 
 - read words from file: 2of12inf.txt <i>(75203 - words)</i>
