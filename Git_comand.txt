@@ -41,4 +41,18 @@ json file path:
 
 
 git reflog” and “git cherry-pick  jak chcesz wrócić	 
- 
+
+
+-----------------
+
+configure token
+
+github->settings->Developer Settings->personal acess token->classic token
+
+making push configure github to store credentials:
+#git config --global credential.helper store
+
+#git push origin main
+-- user name
+--token for password
+
