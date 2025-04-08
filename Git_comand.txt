@@ -35,6 +35,8 @@ $git reflog” and “git cherry-pick  jak chcesz wrócić
 
 # configure token github->settings->Developer Settings->personal acess token->classic token
 
+$git remote set-url origin https://[your token]@github.com/athomicus/Defold_l01.git
+
 $ git config --global user.name athomicus
 $ git config --global user.email athomicus@gmail.com
 #making push configure github to store credentials:
