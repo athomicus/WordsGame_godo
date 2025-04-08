@@ -1,58 +1,46 @@
-git init -b main
+$git init -b main
 
 $ git remote add origin <REMOTE_URL>
 # Sets the new remote
 $ git remote -v
-# Verifies the new remote URL
-
-<REMOTE_URL> - z zalozonego repo w github.com  
+# Verifies the new remote URL <REMOTE_URL> - z zalozonego repo w github.com  
 
 
 
-git clone <repo adress from github>
+$git clone <repo adress from github>
 
-git pull MyOrigin master | zalezy jak sie zalozy mozna tez: git pull origin master bo $ git remote add origin
+$git pull MyOrigin master | zalezy jak sie zalozy mozna tez: git pull origin master bo $ git remote add origin
 
-git add .
-git commit -m "info"
-git push MyOrigin master    | git push origin main
-
-GitBash
+$git add .
+$git commit -m "info"
+$git push MyOrigin master    | git push origin main
 
 $ git branch
 $ git checkout <existing_branch>
 $ git checkout -b <new_branch>
 
-git checkout -b hotfix
-git commit -a -m 'Fix broken email address'
-git push origin hotfix
+$git checkout -b hotfix
+$git commit -a -m 'Fix broken email address'
+$git push origin hotfix
 $ git checkout master
 $ git merge hotfix  
 
 
-jak cos sie zwali:
-git pull --rebase
-git push -f origin main 
+#jak cos sie zwali:
+$git pull --rebase
+$git push -f origin main 
+
+$git reflog” and “git cherry-pick  jak chcesz wrócić	 
 
 
-json file path:
+# configure token github->settings->Developer Settings->personal acess token->classic token
 
- "program": "C:/Godot/Godot_v4.0.3-stable_mono_win64/Godot_v4.0.3-stable_mono_win64.exe",	
+$ git config --global user.name athomicus
+$ git config --global user.email athomicus@gmail.com
+#making push configure github to store credentials:
+$git config --global credential.helper store
 
-
-git reflog” and “git cherry-pick  jak chcesz wrócić	 
-
-
------------------
-
-configure token
-
-github->settings->Developer Settings->personal acess token->classic token
-
-making push configure github to store credentials:
-#git config --global credential.helper store
-
-#git push origin main
+$git push origin main
 -- user name
 --token for password
 
