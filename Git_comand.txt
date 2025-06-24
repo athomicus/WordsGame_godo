@@ -10,16 +10,18 @@ $ git remote -v
 
 
 $git clone <repo adress from github>
-
 $git pull MyOrigin master | zalezy jak sie zalozy mozna tez: git pull origin master bo $ git remote add origin
 
 $git add .
 $git commit -m "info"
 $git push MyOrigin master    | git push origin main
 
-$ git branch
-$ git checkout <existing_branch>
+Praca z branchami
+$ git branch <nazwa brancha>  --zalozenie brancha
+$ git checkout <existing_branch> --przelaczenie sie na niego
+$ git checkout master   --przelaczenie sie na mastera
 $ git checkout -b <new_branch>
+$ git branch -d <nazwa_brancha>  -- usuniecie brancha
 
 $git checkout -b hotfix
 $git commit -a -m 'Fix broken email address'
