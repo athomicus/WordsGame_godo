@@ -22,7 +22,7 @@ $ git checkout <existing_branch> --przelaczenie sie na niego
 $ git checkout master   --przelaczenie sie na mastera
 $ git checkout -b <new_branch>
 $ git branch -d <nazwa_brancha>  -- usuniecie brancha
-
+$ git push origin <nazwa_brancha>
 $git checkout -b hotfix
 $git commit -a -m 'Fix broken email address'
 $git push origin hotfix
