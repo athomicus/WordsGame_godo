@@ -28,6 +28,7 @@ $git commit -a -m 'Fix broken email address'
 $git push origin hotfix
 $ git checkout master
 $ git merge hotfix  
+$ git fetch --download branches
 
 
 #jak cos sie zwali:
