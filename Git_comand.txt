@@ -29,6 +29,7 @@ $git push origin hotfix
 $ git checkout master
 $ git merge hotfix  
 $ git fetch --download branches
+$ git fetch --all
 
 
 #jak cos sie zwali:
